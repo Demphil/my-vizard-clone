@@ -1,16 +1,14 @@
-import './globals.css';
-import { ReactNode } from 'react';
+import "./globals.css";
+import { UploadProvider } from './contexts/UploadContext';
 
-export const metadata = {
-  title: 'Vizard Clone',
-  description: 'AI Video Editor Clone',
-};
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ar">
-      <body className="bg-gray-50">
-        <main>{children}</main>
+    <html lang="en">
+      <body>
+        <UploadProvider>
+          {children}
+        </UploadProvider>
       </body>
     </html>
   );
